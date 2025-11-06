@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ledgerly Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="dashboard">
+
+  <!-- 📱 HAMBURGER MENU BUTTON -->
+  <button class="menu-toggle" id="menuToggle">☰</button>
+
+  <!-- 🧭 SIDOMENY -->
+  <aside class="sidebar" id="sidebar">
+    <div class="logo">Ledgerly</div>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Wallet</a></li>
+        <li><a href="#">Transactions</a></li>
+        <li><a href="#">Send</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- 🧾 HUVUDINNEHÅLL -->
+  <main class="main-content">
+
+    <!-- 🔝 TOPBAR -->
+    <div class="topbar">
+      <h1>Welcome back</h1>
+      <button class="toggle-theme" id="themeToggle" title="Toggle Dark Mode">🌙</button>
+    </div>
+
+    <!-- 🪙 WALLET BALANCE -->
+    <section class="wallet-overview" id="wallet">
+      <h2>Wallet Balance</h2>
+      <div class="crypto-grid">
+
+        <!-- 🟠 Bitcoin -->
+        <div class="crypto-card btc">
+          <img src="images/btc.svg" alt="BTC" class="crypto-icon" />
+          <h3>BTC</h3>
+          <p class="amount">0.12</p>
+          <p class="value">≈ €6,340</p>
+        </div>
+
+        <!-- 🔷 Ethereum -->
+        <div class="crypto-card eth">
+          <img src="images/eth.svg" alt="ETH" class="crypto-icon" />
+          <h3>ETH</h3>
+          <p class="amount">3.5</p>
+          <p class="value">≈ €3,280</p>
+        </div>
+
+        <!-- 🟩 Solana -->
+        <div class="crypto-card sol">
+          <img src="images/sol.svg" alt="SOL" class="crypto-icon" />
+          <h3>SOL</h3>
+          <p class="amount">182.40</p>
+          <p class="value">≈ €182.40</p>
+        </div>
+
+        <!-- 🔵 USD Coin -->
+        <div class="crypto-card usdc">
+          <img src="images/usdc.svg" alt="USDC" class="crypto-icon" />
+          <h3>USDC</h3>
+          <p class="amount">1240.00</p>
+          <p class="value">≈ €1,240.00</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 💹 MARKETS -->
+    <section class="market-section" id="markets">
+      <h2>Markets</h2>
+      <div class="market-cards">
+
+        <div class="market-card btc">
+          <div class="coin-header">
+            <h3>BTC</h3>
+            <span class="change positive">+3.1%</span>
+          </div>
+          <p class="price">€63,420</p>
+          <p class="volume">Vol 24h: 2.28B</p>
+        </div>
+
+        <div class="market-card eth">
+          <div class="coin-header">
+            <h3>ETH</h3>
+            <span class="change positive">+2.4%</span>
+          </div>
+          <p class="price">€3,280</p>
+          <p class="volume">Vol 24h: 1.45B</p>
+        </div>
+
+        <div class="market-card sol">
+          <div class="coin-header">
+            <h3>SOL</h3>
+            <span class="change positive">+5.1%</span>
+          </div>
+          <p class="price">€182.40</p>
+          <p class="volume">Vol 24h: 620M</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 📈 BALANSHISTORIK -->
+    <section class="chart-section" id="balance-history">
+      <h2>Balance History</h2>
+      <div class="chart-wrapper">
+        <div class="chart-container">
+          <canvas id="balanceChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🧾 TRANSAKTIONER -->
+    <section class="transactions" id="transactions">
+      <h2>Recent Transactions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>To</th>
+            <th>Amount</th>
+            <th>Token</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025-11-02</td>
+            <td>0xAbc123...</td>
+            <td>0.5</td>
+            <td>ETH</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ✉️ SKICKA TOKENS -->
+    <section class="send-form" id="send">
+      <h2>Send Tokens</h2>
+      <form id="sendForm">
+        <input type="text" placeholder="To address" required />
+        <select required>
+          <option value="ETH">ETH</option>
+          <option value="BTC">BTC</option>
+        </select>
+        <input type="number" placeholder="Amount" required min="0" step="any" />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- 📜 SCRIPTS -->
+  <script src="script.js" defer></script>
+
+</body>
+</html>

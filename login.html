@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ✅ Metadata och mobilanpassning -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Titel på sidan -->
+  <title>Welcome to Ledgerly</title>
+
+  <!-- ✅ Koppling till extern CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-page">
+
+  <!-- ✨ Partikeleffekt-bakgrund -->
+  <canvas id="particle-bg"></canvas>
+
+  <!-- 🧾 Huvud-container för login-sidan -->
+  <div class="login-container">
+    <!-- ✅ Rubrik -->
+    <h1>Welcome to <span class="brand">Ledgerly</span></h1>
+
+    <!-- ✅ Kort beskrivning -->
+    <p class="tagline">The place you manage your digital assets securely.</p>
+
+    <!-- 🔐 Login-knappar -->
+    <div class="login-actions">
+      <!-- MetaMask -->
+      <button onclick="loginWithMetaMask()" class="login-button">
+        🦊 Connect MetaMask
+      </button>
+
+      <!-- Phantom -->
+      <button onclick="loginWithPhantom()" class="secondary-button">
+        👻 Connect Phantom
+      </button>
+    </div>
+
+    <!-- 💡 Tips om användaren inte har wallet -->
+    <p class="wallet-help">
+      Don’t have a wallet yet? <br />
+      👉 <a href="https://metamask.io/download.html" target="_blank">Install MetaMask</a> or 
+      <a href="https://phantom.app/download" target="_blank">Install Phantom</a>
+    </p>
+  </div>
+
+  <!-- ✅ JavaScript för loginfunktioner -->
+  <script>
+    // 🔐 Simulerad MetaMask Login
+    async function loginWithMetaMask() {
+      const button = document.querySelector('.login-button');
+      button.disabled = true;
+      button.textContent = "🦊 Tack! Nu loggar du in ...";
+
+      // Vänta lite för att ge känslan av "inloggning"
+      setTimeout(() => {
+        window.location.href = "dashboard.html";
+      }, 2000);
+    }
+
+    // 👻 Simulerad Phantom Login
+    async function loginWithPhantom() {
+      const button = document.querySelector('.secondary-button');
+      button.disabled = true;
+      button.textContent = "👻 Tack! Nu loggar du in ...";
+
+      setTimeout(() => {
+        window.location.href = "dashboard.html";
+      }, 2000);
+    }
+  </script>
+
+  <!-- ✨ Ladda partikeleffekt JavaScript -->
+  <script src="particles.js"></script>
+
+</body>
+</html>
